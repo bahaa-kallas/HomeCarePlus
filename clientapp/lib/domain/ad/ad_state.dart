@@ -1,0 +1,1 @@
+enum AdState { active, inactive }

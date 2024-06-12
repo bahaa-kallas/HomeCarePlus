@@ -1,0 +1,9 @@
+### Intellij ###
+*.iml
+.idea/
+
+# Visual Studio Code related
+.classpath
+.project
+.settings/
+.vscode/*

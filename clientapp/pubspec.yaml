@@ -1,0 +1,146 @@
+name: servicegeniestore
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  intl: ^0.19.0
+  get: ^4.6.1
+  dio: ^4.0.0
+  jwt_decode: ^0.3.1
+  jwt_decoder: ^2.0.1
+  carousel_slider: ^4.2.1
+  flutter_local_notifications: ^17.1.2
+  path_provider: ^2.1.3
+  shared_preferences: ^2.2.3
+  fluttertoast: ^8.2.5
+  image_picker: ^0.8.4+4
+  webview_flutter: ^2.0.13
+  flutter_bloc: ^8.1.5
+  stripe_checkout: ^0.1.1
+  getwidget: ^2.0.4
+  flutter_screenutil: 5.9.0
+  json_theme: 6.4.1
+  json_annotation: ^4.0.1
+  get_storage: 2.1.1
+  coinbase_commerce: ^0.0.3
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  simple_animations: ^5.0.2
+  scrollable_positioned_list: ^0.3.8
+  change_app_package_name: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: 2.4.9
+  json_serializable: ^6.1.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - assets/inline-logo.png
+    - assets/app-icon.png
+    - assets/theme/dark_theme.json
+    - assets/theme/light_theme.json
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font.
+
+  fonts:
+    - family: TTWellingtonsTrialBlack
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Black.otf"
+    - family: TTWellingtonsTrialBlackItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Black Italic.otf"
+    - family: TTWellingtonsTrialBold
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Bold.otf"
+    - family: TTWellingtonsTrialBoldItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Bold Italic.otf"
+    - family: TTWellingtonsTrialDemiBold
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial DemiBold.otf"
+    - family: TTWellingtonsTrialDemiBoldItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial DemiBold Italic.otf"
+    - family: TTWellingtonsTrialExtraBold
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial ExtraBold.otf"
+    - family: TTWellingtonsTrialExtraBoldItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial ExtraBold Italic.otf"
+    - family: TTWellingtonsTrialExtraLight
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial ExtraLight.otf"
+    - family: TTWellingtonsTrialExtraLightItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial ExtraLight Italic.otf"
+    - family: TTWellingtonsTrialItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Italic.otf"
+    - family: TTWellingtonsTrialLight
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Light.otf"
+    - family: TTWellingtonsTrialLightItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Light Italic.otf"
+    - family: TTWellingtonsTrialMedium
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Medium.otf"
+    - family: TTWellingtonsTrialMediumItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Medium Italic.otf"
+    - family: TTWellingtonsTrialRegular
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Regular.otf"
+    - family: TTWellingtonsTrialThin
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Thin.otf"
+    - family: TTWellingtonsTrialThinItalic
+      fonts:
+        - asset: "assets/fonts/TT Wellingtons Trial Thin Italic.otf"
+
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

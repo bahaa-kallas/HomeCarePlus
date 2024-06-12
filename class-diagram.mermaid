@@ -1,0 +1,204 @@
+classDiagram
+    class LocalizedString {
+        +en: string
+        +ar: string
+    }
+
+    class ServiceState {
+        <<enumeration>>
+        public
+        private
+    }
+
+    class ServicePropertyText {
+        +id: string
+        +type: string
+        +name: LocalizedString
+        +options: LocalizedString[]
+    }
+
+    class ServicePropertyNumber {
+        +id: string
+        +type: string
+        +name: LocalizedString
+        +options: number[]
+    }
+
+    class ServicePrice {
+        +currencyId: string
+        +amount: number
+    }
+
+    ServicePrice "m" -- "1" Currency
+
+    class Service {
+        +_id: ObjectId
+        +id: string
+        +name: LocalizedString
+        +description: LocalizedString
+        +tos: LocalizedString
+        +imageUrl: string
+        +state: ServiceState
+        +price: ServicePrice[]
+        +categoryId: string
+        +properties: (ServicePropertyText | ServicePropertyNumber)[]
+        +createdAt: Date
+        +updatedAt: Date
+        +deletedAt: Date
+        +supportedPaymentMethods: string[]
+    }
+
+    Service "1" -- "m" ServicePropertyText
+    Service "1" -- "m" ServicePropertyNumber
+    Service "1" -- "m" ServicePrice
+    Service "m" -- "1" Category
+    Service "m" -- "m" PaymentMethod
+
+    class LocalizedString {
+        +en: string
+        +ar: string
+    }
+
+    class Category {
+        +_id: ObjectId
+        +id: string
+        +name: LocalizedString
+    }
+
+    class Currency {
+        +_id: ObjectId
+        +id: string
+        +name: LocalizedString
+        +code: string
+        +basicUnit: LocalizedString
+        +enabled: boolean
+    }
+
+    class PaymentMethod {
+        +_id: ObjectId
+        +id: string
+        +name: LocalizedString
+        +description: LocalizedString
+        +icon: string
+        +enabled: boolean
+        +additionalInformation: LocalizedString
+    }
+
+    class Address {
+        +street: string
+        +city: string
+        +state: string
+        +country: string
+        +postalCode: string
+    }
+
+    class UserType {
+        <<enumeration>>
+        customer
+        admin
+    }
+
+    class User {
+        +_id: ObjectId
+        +id: string
+        +type: UserType
+        +name: string
+        +email: string
+        +hashedPassword: string
+        +salt: string
+        +emailVerificationToken: string
+        +emailVerified: boolean
+        +createdAt: Date
+        +addresses: Address[]
+        +phoneNumber: string
+    }
+
+    Address "1" -- "m" User
+
+    class AdLocation {
+        +_id: ObjectId
+        +id: string
+        +name: LocalizedString
+        +locationId: string
+    }
+    class AdType {
+        <<enumeration>>
+        banner
+        sidebar
+        popup
+    }
+
+    class Gender {
+        <<enumeration>>
+        male
+        female
+    }
+    class TargetAudience {
+        demographics: Demographics
+    }
+
+    class Demographics {
+        age: AgeRange
+        gender: Gender
+    }
+
+    class AgeRange {
+        min: number
+        max: number
+    }
+    class DateRange {
+        min: number
+        max: number
+    }
+    class Visibility {
+        active: boolean
+        schedule: DateRange
+    }
+    class Ad {
+        +_id: ObjectId
+        +id: string
+        +name: LocalizedString
+        +type: AdType
+        +images: string[]
+        +targetAudience: TargetAudience
+        +duration: DateRange
+        +visibility: Visibility
+        +impressions: number
+        +clicks: number
+        +associatedServices: string[]
+    }
+
+    Ad "m" -- "m" Service
+
+    class ServicePropertyAnswer {
+        +servicePropertyId: string
+        +userSelection: string | Date | number
+    }
+
+    class OrderState {
+        placed
+        scheduled
+        deleivered
+        cancelled
+    }
+
+    class Order {
+        +_id: ObjectId
+        +id: string
+        +userId: string
+        +serviceId: string
+        +serviceProperties: ServicePropertyAnswer[]
+        +totalPrice: ServicePrice
+        +paymentMethodId: string
+        +deliveryAddress: A
+        +orderDate: Date
+        +deliveryDate: Date | null
+        +orderStatus: string // enum:
+        +trackingNumber: string | null
+        +cancelledAt: Date | null
+    }
+
+    Order "m" -- "1" User
+    Order "m" -- "1" Service
+    Order "1" -- "m" ServicePropertyAnswer
+

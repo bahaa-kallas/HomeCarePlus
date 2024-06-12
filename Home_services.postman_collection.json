@@ -1,0 +1,590 @@
+{
+	"info": {
+		"_postman_id": "0f790bc4-b708-429d-8fa0-986458bd6e0b",
+		"name": "Home_services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19889809"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"admin\",\r\n    \"name\": \"My name\",\r\n    \"email\": \"account@gmail.com\",\r\n    \"password\": \"defender\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/auth/signup",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"account@gmail.com\",\r\n    \"password\": \"defender\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/auth/login",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Create new Service ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \r\n  \"name\": \"modifide service\",\r\n  \"type\": \"Decorating\",\r\n  \"questions\": [\r\n    {\r\n      \"type\": \"open-ended\",\r\n      \"question\": \"why using our service\",\r\n      \"options\": []\r\n    },\r\n    {\r\n      \"type\": \"multiple-choice\",\r\n      \"question\": \"what time do you want us to arrive\",\r\n      \"options\": [\r\n        \"10 to 12 O'clock\",\r\n        \"2 to 4 O'clock\",\r\n        \"Evening\"\r\n      ]}],\r\n      \"payment_methods\": \"Cash\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/services/create",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all services",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/services/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get service by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/services/66184a5e856b01f52bfce755",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								"66184a5e856b01f52bfce755"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit service",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \r\n  \"name\": \"new service\",\r\n  \"type\": \"Decorating\",\r\n  \"questions\": [\r\n    {\r\n      \"type\": \"open-ended\",\r\n      \"question\": \"why using our service\",\r\n      \"options\": []\r\n    },\r\n    {\r\n      \"type\": \"multiple-choice\",\r\n      \"question\": \"what time do you want us to arrive\",\r\n      \"options\": [\r\n        \"10 to 12 O'clock\",\r\n        \"2 to 4 O'clock\",\r\n        \"Evening\"\r\n      ]}],\r\n      \"payment_methods\": \"Cash\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/services/update/66184a5e856b01f52bfce755",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								"update",
+								"66184a5e856b01f52bfce755"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete service",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/services/delete/66184a5e856b01f52bfce755",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								"delete",
+								"66184a5e856b01f52bfce755"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Support Messages",
+			"item": [
+				{
+					"name": "Get all messages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/support",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"support"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get message by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/support/66193d8019aef1cdedc8cc96",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"support",
+								"66193d8019aef1cdedc8cc96"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ads",
+			"item": [
+				{
+					"name": "Get all ads",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/ads",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create ad",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"title\",\r\n    \"image\":\"image://URL\",\r\n    \"duration\": 15,\r\n    \"location\" : \"Header\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/ads",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit ad",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"modifide title\",\r\n    \"image\":\"image://URL\",\r\n    \"duration\": 25,\r\n    \"location\" : \"Header\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/ads/6619b37313f242425aeccc72",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ads",
+								"6619b37313f242425aeccc72"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ad by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/ads/6619b37313f242425aeccc72",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ads",
+								"6619b37313f242425aeccc72"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ad",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/ads/6619b37313f242425aeccc72",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ads",
+								"6619b37313f242425aeccc72"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Send notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Notification\",\r\n    \"message\":\"Notification Body\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/notifications",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user management",
+			"item": [
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:3000/api/users/6619b84e13f242425aeccc7b",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"6619b84e13f242425aeccc7b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFjY291bnRAZ21haWwuY29tIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNzEyOTU1NzgyLCJleHAiOjE3MTQyNTE3ODJ9.OJ5AHw7Cl-_okAsUFeEtstlr-dZ4WQAlXl2kbgKfE24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"admin\",\r\n    \"name\": \"My name\",\r\n    \"email\": \"manage.account@gmail.com\",\r\n    \"password\": \"defender\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/api/users",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
